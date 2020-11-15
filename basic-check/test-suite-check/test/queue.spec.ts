@@ -28,4 +28,14 @@ describe('Testing Queue', () => {
     result.should.be.a('number');
     result.should.equal(1);
   });
+
+  it('should check if the queue is empty when there is no data there', () => {
+    const q = new Queue<number>([]);
+    expect(q.isEmpty()).to.equal(true);
+  });
+
+  it('should check if the queue is not empty when there is data there', () => {
+    const q = new Queue<number>([1]);
+    expect(q.isEmpty()).to.equal(false);
+  });
 });
